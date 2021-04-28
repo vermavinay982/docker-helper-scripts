@@ -1,4 +1,5 @@
 # docker-demo
+[Common Commands](https://github.com/vermavinay982/docker-demo/blob/main/README.md#few-other-important-commands)
 
 ```docker build -t colorapp . ```
 
@@ -29,8 +30,19 @@ docker run hello-world
 ## Few Other Important Commands 
 ---
 
-```docker exec -it <container name> bash```
-```docker exec -it <container name> python3```
-
-```docker attach <container name>```
-```docker cp mycontainer:/filename.txt filename.txt```
+```
+docker exec -it <container name> bash
+docker exec -it <container name> python3
+docker attach <container name>
+docker cp mycontainer:/filename.txt filename.txt
+```
+### Saving and Loading Image - Without Internet
+```
+docker save -o <path for generated tar file> <image name>
+docker save --output hello.tar colorapp
+docker load --input hello.tar
+```
+### Run Python with display
+```
+docker run --rm -it --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" python
+```
