@@ -25,3 +25,12 @@ newgrp docker or (logout/login your system)
 docker run hello-world
 ```
 [More Deep Info Here](https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo)
+
+## Few Other Important Commands 
+---
+
+```docker exec -it <container name> bash```
+```docker exec -it <container name> python3```
+
+```docker attach <container name>```
+```docker cp mycontainer:/filename.txt filename.txt```
